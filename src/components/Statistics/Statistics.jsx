@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const Statistics = ({
     good,
@@ -8,31 +9,38 @@ const Statistics = ({
     positivePercentage }) => (
         <>
             <ul style={{listStyle: "none"}}>
-                <li>Good:
-                        <span> {good}</span>
-                    </li>
-                    <li>Neutral:
-                        <span> {neutral}</span>
-                    </li>
-                    <li>Bad:
-                        <span> {bad}</span>
-                    </li>
-                </ul>
+                <li style={{color: "darkblue"}}>Good:
+                    <span> {good}</span>
+                </li>
+                <li style={{color: "darkblue"}}>Neutral:
+                    <span> {neutral}</span>
+                </li>
+                <li style={{color: "darkblue"}}>Bad:
+                    <span> {bad}</span>
+                </li>
+            </ul>
 
-                 <ul style={{listStyle: "none"}}>
-                    <li>Total:
-                        <span> {total} </span>
-                    </li>
-                    <li>Positive feedback:
-                        <span> {positivePercentage} </span>
-                    </li>
-                </ul>
+            <ul style={{listStyle: "none"}}>
+                <li style={{color: "darkblue"}}>Total:
+                    <span> {total} </span>
+                </li>
+                <li style={{color: "darkblue"}}>Positive feedback:
+                    <span> {positivePercentage} </span>
+                </li>
+            </ul>
         </>
 )
 
-    
+Statistics.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.string.isRequired,
+}
+
+export default Statistics;    
 
     
             
  
-export default Statistics;
